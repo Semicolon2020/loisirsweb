@@ -1,0 +1,23 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<form id="test-form" class="white-popup-block" action="{{ path("fos_user_registration_register") }}" method="post" class="white-popup-block">
+
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+    <div class="popup_box ">
+        <div class="popup_inner">
+
+            <h3>Sign in</h3>
+            <form action="#">
+                <div class="row">
+                    <div class="col-xl-12 col-md-12">
+    {{ form_widget(form) }}
+     <div class="col-xl-12">>
+        <input type="submit" class="boxed_btn_orange" id="_submit" name="_submit" value="{{ 'registration.submit'|trans }}" />
+    </div>
+{{ form_end(form) }}
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</form>
