@@ -18,8 +18,8 @@ class LivreType extends AbstractType
         $builder
             ->add('titrel')
             ->add('filel',FileType::class,array('data_class' => null,'required' => false,'label'=>'File(PDF file)'))
-            ->add('file')
-            ->add('audio')
+            ->add('file',FileType::class,array('data_class' => null,'required' => false))
+            ->add('audio',FileType::class,array('data_class' => null,'required' => false))
         ->add('Ajouter', SubmitType::class);
     }/**
      * {@inheritdoc}

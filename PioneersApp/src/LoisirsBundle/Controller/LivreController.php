@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 
 class LivreController extends Controller
@@ -54,6 +55,10 @@ class LivreController extends Controller
             $fileName=md5(uniqid()).'.'.$file->guessExtension();
             $file->move($this->getParameter('fichiers_directory'), $fileName);
             $modele->setAudio($fileName);
+            $file=$modele->getFilel();
+            $fileName=md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('livre_directory'), $fileName);
+            $modele->setFilel($fileName);
             $modele->uploadProfilePicture();
             $em->persist($modele);
             $em->flush();
@@ -65,14 +70,14 @@ class LivreController extends Controller
 
             //create file
 
-            $file=$modele->getFilel();
-            $fileName=md5(uniqid()).'.'.$file->guessExtension();
-            $file->move($this->getParameter('livre_directory'), $fileName);
-            $modele->setFilel($fileName);
-            $modele->uploadProfilePicture();
-            $em->persist($modele);
-            $em->flush();
-            return $this->redirectToRoute('afficherl');
+          //  $file=$modele->getFilel();
+            //$fileName=md5(uniqid()).'.'.$file->guessExtension();
+            //$file->move($this->getParameter('livre_directory'), $fileName);
+            //$modele->setFilel($fileName);
+            //$modele->uploadProfilePicture();
+            //$em->persist($modele);
+            //$em->flush();
+            //return $this->redirectToRoute('afficherl');
 
 
         }

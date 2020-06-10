@@ -32,7 +32,7 @@ class Cours
 
     /**
      * @var string
-     *@Assert\NotBlank(message="remplir Ce champs")
+     * @Assert\NotBlank(message="remplir Ce champs")
      * @ORM\Column(name="titre", type="string", length=255)
      */
     private $titre;
